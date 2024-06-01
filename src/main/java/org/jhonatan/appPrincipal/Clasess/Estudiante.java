@@ -74,4 +74,12 @@ public class Estudiante extends Persona {
         }
         return monto;
     }
+
+    @Override
+    public String mostrarDatos() {
+        return super.mostrarDatos()+
+                "\nEscuela: "+this.escuela
+                +"\nMonto a Pagar: "+this.calcularMonto();
+    }
+
 }
