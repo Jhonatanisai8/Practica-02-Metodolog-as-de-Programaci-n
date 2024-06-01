@@ -23,4 +23,55 @@ public class Estudiante extends Persona {
         this.escuela = escuela;
     }
 
+    //metodos
+    //variables
+    private final double montoMedicina = 1500;
+    private final double montoDerecho = 650;
+    private final double montoSistemas = 600;
+
+    public double calcularMonto() {
+        double monto = 0;
+        switch (this.getCategoria()) {
+            case "A":
+                switch (this.escuela) {
+                    case "Medicina":
+                        monto = montoMedicina;
+                        break;
+                    case "Derecho":
+                        monto = montoDerecho;
+                        break;
+                    case "Sistemas":
+                        monto = montoSistemas;
+                        break;
+                }
+                break;
+            case "B":
+                switch (this.escuela) {
+                    case "Medicina":
+                        monto = (montoMedicina) - (montoMedicina * 0.80);
+                        break;
+                    case "Derecho":
+                        monto = (montoDerecho) - (montoDerecho * 0.80);
+                        break;
+                    case "Sistemas":
+                        monto = (montoSistemas) - (montoSistemas * 0.80);
+                        break;
+                }
+                break;
+            case "C":
+                switch (this.escuela) {
+                    case "Medicina":
+                        monto = (montoMedicina) - (montoMedicina * 0.50);
+                        break;
+                    case "Derecho":
+                        monto = (montoDerecho) - (montoDerecho * 0.50);
+                        break;
+                    case "Sistemas":
+                        monto = (montoSistemas) - (montoSistemas * 0.50);
+                        break;
+                }
+                break;
+        }
+        return monto;
+    }
 }
