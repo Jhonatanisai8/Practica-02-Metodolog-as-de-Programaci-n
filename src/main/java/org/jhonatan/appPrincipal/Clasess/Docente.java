@@ -46,10 +46,23 @@ public class Docente extends Persona {
     public double calcularSueldo() {
         double sueldo = 0;
         switch (this.getCategoria()) {
-            case "A" -> sueldo = (horas * 80);
-            case "B" -> sueldo = (horas * 70);
-            case "C" -> sueldo = (horas * 50);
+            case "A" ->
+                sueldo = (horas * 80);
+            case "B" ->
+                sueldo = (horas * 70);
+            case "C" ->
+                sueldo = (horas * 50);
         }
         return sueldo;
     }
+
+    @Override
+    public String mostrarDatos() {
+        return super.mostrarDatos()
+                + "\nGrado: " + this.grado
+                + "\nHoras: " + this.horas
+                + "\nSuelto total: " + this.calcularSueldo();
+
+    }
+
 }
